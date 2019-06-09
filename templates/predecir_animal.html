@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Predecir animal</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+                <h1>Predecir Animal</h1>
+                <h2>Introduce los parámetros</h2>
+                    <p>Introduce los datos para predecir de que animal se trata. El modelo utilizado
+                    es Arbol de decisión, en el cual, se basa en los parámetros introducidos para 
+                    determinar que animal es.
+                    </p>
+                    <form method="POST" action="/send">
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Tamaño" name="Param1">
+                        </div>
+                        <div class="col">
+                             <input type="text" class="form-control" placeholder="Peso" name="Param2">
+                        </div>
+                        <div class="col">
+                                <input type="text" class="form-control" placeholder="Velocidad" name="Param3">
+                        </div>
+                        <div class="col">
+                                <input type="text" class="form-control" placeholder="Dientes" name="Param4">
+                        </div> 
+                    </div>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                    </form>
+                </div>
+    </body>
+</html>
