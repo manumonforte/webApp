@@ -1,5 +1,14 @@
 from flask import Flask, render_template, request
+from sklearn.externals import joblib
+import pandas as pd
 
+'''FUNCIONES DE AYUDA'''
+def comprobarDatos(info):
+   for i in info.keys():
+       try:
+           value = int(info.get(i,""))
+       except:
+            print("ATENCIÓN: Debe ingresar un número entero.")
 
 '''Definimos la aplicación'''
 app = Flask(__name__)
@@ -22,17 +31,36 @@ def predecir_animal():
 @app.route('/send', methods=['GET', 'POST'])
 def form_animal():
     if request.method=='POST':
-        param1 = request.form['Param1']
-        param2 = request.form['Param2']
-        param3 = request.form['Param3']
-        param4 = request.form['Param4']
+        info = {
+        'pelo' : request.form['pelo'],
+        'plumas' : request.form['plumas'],
+        'huevos' : request.form['huevos'],
+        'leche' : request.form['leche'],
+        'vuela' : request.form['vuela'],
+        'acuatico' : request.form['acuatico'],
+        'depredador' : request.form['depredador'],
+        'dientes' : request.form['dientes'],
+        'columnaVertebral' : request.form['columnaVertebral'],
+        'pulmones' : request.form['pulmones'],
+        'venenoso' : request.form['venenoso'],
+        'aletas' : request.form['aletas'],
+        'patas' : request.form['patas'],
+        'cola' : request.form['cola'],
+        'domestico' : request.form['domestico']
+        }
+        '''Cargamos modelo y predecimos'''
+        modelo = joblib.load('pipeline_animales.pkl')
+        try:
+            comprobarDatos(info)
+            animalPredicho = modelo.predict(pd.DataFrame(info,index=[0]))
+            info_animales = pd.read_csv('dataset/class.csv',header=None)
         
-        return render_template('respuesta_animal.html',param1=param1,
-                               param2=param2,param3=param3,
-                               param4=param4)
-    
-
-
+            animalPredicho = info_animales.loc[animalPredicho[0],:]
+        
+            return render_template('RESPUESTA_ANIMAL.html',clase=animalPredicho[2],
+                               numero = animalPredicho[1],ejemplos = animalPredicho[3])
+        except ValueError:
+            return render_template('errores.html')
 
 if __name__ == '__main__':
     app.run(debug=False)

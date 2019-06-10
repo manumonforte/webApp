@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Resultado Clasificación</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    </head>
     <body>
-       <header>
-           <h1>
-               SE TRATA DE UN PABLO AGUDO
-               <p>{{ param1 }}</p>
-               <p>{{ param2 }}</p>
-               <p>{{ param3 }}</p>
-               <p>{{ param4 }}</p>
-
-           </h1>
-       </header>
+        <div class="alert alert-success" role="alert"  width=100% heigth=100%>
+            <h1 class="alert-heading" >!Animal Clasificado!</h1>
+            <p>La clase del animal es : {{ clase }}</p>
+            <p>The are {{ numero }} in the zoo</p>
+            <p>Some of those animals are : {{ ejemplos }}</p>
+        </div>
     </body>
 </html>
