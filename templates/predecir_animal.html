@@ -12,7 +12,28 @@
             es Arbol de decisión, en el cual, se basa en los parámetros introducidos para 
             determinar que clase de animal es.
             </p>
-            <form method="POST" action="/send">
+            <p>
+                Las instrucciones para rellenar los campos son las siguientes:
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pelo (1 tiene, 0 no tiene)</li>
+                    <li class="list-group-item">Plumas (1 tiene, 0 no tiene)</li>
+                    <li class="list-group-item">Huevos (1 tiene, 0 no tiene)</li>
+                    <li class="list-group-item">Leche (1 tiene, 0 no tiene)</li>
+                    <li class="list-group-item">Vuela (1 tiene, 0 no tiene)</li>
+                    <li class="list-group-item">Acuático (1 es acuático, 0 no es acuático)</li>
+                    <li class="list-group-item">Depredador (1 es depredador, 0 no es depredador)</li>
+                    <li class="list-group-item">Dientes (1 tiene, 0 no tiene)</li>
+                    <li class="list-group-item">Columna Vertebral (1 tiene, 0 no tiene)</li>
+                    <li class="list-group-item">Pulmones (1 Respiración pulmonar, 0 no respiración pulmonar)</li>
+                    <li class="list-group-item">Venenoso (1 es venenoso, 0 no es venenoso)</li>
+                    <li class="list-group-item">Aletas (1 tiene, 0 no tiene)</li>
+                    <li class="list-group-item">Patas (Numero de patas)</li>
+                    <li class="list-group-item">Cola (1 tiene, 0 no tiene)</li>
+                    <li class="list-group-item">Doméstico (1 tiene, 0 no tiene)</li>
+                  </ul>
+                <p>Aquellos campos en los que se introduzca 0 o 1, en el caso de ser mayor que 1, será traducido como 1. En otro caso obtendremos como resultado error. </p>
+            </p>
+            <form method="POST" action="/predecir_animal/send">
             <div class="form-row">
                 <div class="col">
                     <input type="text" class="form-control" placeholder="pelo" name="pelo">

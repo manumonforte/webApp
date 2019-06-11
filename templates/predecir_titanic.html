@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Titanic</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container" width=100% heigth=100%>
+            <h1>¿Sobrevivirías al viaje del Titanic?</h1>
+            <h2>Introduce los parámetros</h2>
+            <p>Introduce los datos en el formulario. El modelo utilizado
+            es Arbol de decisión, en el cual, se basa en los parámetros introducidos para 
+            determinar si sobrevivirías
+            </p>
+            <p>
+                Las instrucciones para rellenar los campos son las siguientes:
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Clase de billete (1 primera clase, 2 segunda clase, 3 tercera clase)</li>
+                    <li class="list-group-item">Edad (Edad en años)</li>
+                    <li class="list-group-item">Esposos a bordo </li>
+                    <li class="list-group-item">Hijos a bordo </li>
+                    <li class="list-group-item">Precio billete $</li>
+                    <li class="list-group-item">Hombre (1 si, 0 no )</li>
+                    <li class="list-group-item">Mujer (1 si, 0 no )</li>
+                    <li class="list-group-item">puerto_salida_C (1 si, 0 no )</li>
+                    <li class="list-group-item">puerto_salida_Q (1 si, 0 no )</li>
+                    <li class="list-group-item">puerto_salida_S (1 si, 0 no )</li>
+                  </ul>
+                <p>Aquellos campos en los que se introduzca 0 o 1, en el caso de ser mayor que 1, será traducido como 1. En otro caso obtendremos como resultado error. </p>
+            </p>
+            <form method="POST" action="/predecir_titanic/send">
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="billete" name="billete">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="edad" name="edad">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Esposos a bordo" name="n_hermanos_esposos">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Hijos a bordo" name="n_hijos_padres">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Precio billete $" name="precio_billete">
+                </div> 
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Hombre" name="hombre">
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Mujer" name="mujer">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="puerto_salida_C" name="C">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="puerto_salida_Q" name="Q">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="puerto_salida_S" name="S">
+                </div>
+            </div>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
