@@ -21,7 +21,7 @@ I recommend this IDE for pyhton called:
 
 ## How to use it
 
-In the command Prompt you must be in the rootis file of the app and enter :
+In the command Prompt you must be in the root path of the app and enter :
 
 `python main.py`
 
