@@ -27,7 +27,7 @@ In the command Prompt you must be in the rootis file of the app and enter :
 
 The app will be deploy in the port 5000. Insert in your browser this URL http://localhost:5000/ and the you can use app.
 
-## Images from the Web Applicatiuon
+## Images from the Web Application
 
 ![main page](img/muestra01.png)
 
